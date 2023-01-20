@@ -1,6 +1,20 @@
-  name: Setup Python
-  uses: actions/setup-python@v4.5.0
-  with:
+name: Full update
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'
+jobs:
+  full-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - name: Setup Python
+        uses: actions/setup-python@v4.5.0
+        with:
+          python-version: '3.6'
       - name: Build
         env:
           GITHUB_TOKEN: ${{ secrets.USER_GITHUB_TOKEN }}
@@ -9,5 +23,3 @@
         run: |
             pip install pygithub
             python -u mirror_github_org.py --full-run
-
-    
