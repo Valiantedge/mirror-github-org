@@ -17,8 +17,7 @@
     cache-dependency-path: # optional
     # Set this option if you want the action to update environment variables.
     update-environment: # optional, default is true
-    
-name: Full update
+    name: Full update
 on: 
   workflow_dispatch:
   schedule:
