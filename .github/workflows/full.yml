@@ -13,6 +13,8 @@ jobs:
           persist-credentials: false
       - name: Set up Python
         uses: actions/setup-python@v4
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
           python-version: '3.9'
       - name: Build
