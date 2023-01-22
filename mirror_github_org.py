@@ -6,6 +6,7 @@ import urllib.parse
 
 from github import Github
 from github.GithubException import UnknownObjectException, GithubException
+github = Github(os.environ["GITHUB_TOKEN"])
 
 RATE_BUFFER = 100
 EXTRA_WAIT = 60
