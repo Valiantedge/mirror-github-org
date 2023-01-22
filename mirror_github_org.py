@@ -100,7 +100,7 @@ def mirror(token, src_org, dst_org, full_run=False):
 
 if __name__ == "__main__":
     p = {}
-    for param in ("GITHUB_TOKEN", "SRC_ORG", "DST_ORG"):
+    for param in ("ACCESS_TOKEN", "SRC_ORG", "DST_ORG"):
         p[param] = os.getenv(param)
         if not p[param]:
             print("No %s supplied in env" % param)
@@ -111,4 +111,4 @@ if __name__ == "__main__":
         print("Doing a full run, will check all repositories and branches - This may take a long time")
         full_run = True
 
-    mirror(p["GITHUB_TOKEN"], p["SRC_ORG"], p["DST_ORG"], full_run=full_run)
+    mirror(p["ACCESS_TOKEN"], p["SRC_ORG"], p["DST_ORG"], full_run=full_run)
