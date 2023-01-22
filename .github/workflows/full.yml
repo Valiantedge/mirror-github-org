@@ -19,6 +19,7 @@ jobs:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         with:
           python-version: '3.9'
+          github-token: ${{ secrets.USER_GITHUB_TOKEN }}
       - name: Build
         env:
           GITHUB_TOKEN: ${{ secrets.USER_GITHUB_TOKEN }}
